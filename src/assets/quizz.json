@@ -1,0 +1,56 @@
+{
+  "preguntas": [
+    {
+      "pregunta": "¿Cuál es tu idea de un fin de semana perfecto?",
+      "respuestas": [
+        "Salir a explorar la naturaleza y disfrutar del aire libre.",
+        "Quedarme en casa viendo películas o series.",
+        "Pasar tiempo con amigos en una fiesta o evento social.",
+        "Sumergirme en un nuevo proyecto creativo o aprender algo nuevo."
+      ]
+    },
+    {
+      "pregunta": "¿Cómo te describes en situaciones de trabajo en equipo?",
+      "respuestas": [
+        "Soy un líder natural y me gusta tomar la iniciativa.",
+        "Prefiero trabajar en grupo y colaborar de forma equitativa.",
+        "Me gusta trabajar de manera independiente y tener control sobre mi propio trabajo.",
+        "Disfruto participar en el trabajo en equipo, pero también necesito mi espacio personal."
+      ]
+    },
+    {
+      "pregunta": "¿Qué tipo de música te motiva mientras trabajas?",
+      "respuestas": [
+        "Música relajante o instrumental.",
+        "Música pop o rock actual.",
+        "Música clásica o jazz.",
+        "Música electrónica o de géneros más alternativos."
+      ]
+    },
+    {
+      "pregunta": "¿Cuál es tu superpoder ideal?",
+      "respuestas": [
+        "Telequinesis: controlar objetos con la mente.",
+        "Invisibilidad: moverte sin ser visto.",
+        "Lectura de mentes: conocer los pensamientos de los demás.",
+        "Volar: explorar el mundo desde las alturas."
+      ]
+    },
+    {
+      "pregunta": "¿Qué tipo de libro prefieres leer?",
+      "respuestas": [
+        "Novelas de fantasía o ciencia ficción.",
+        "Libros de autoayuda o desarrollo personal.",
+        "Libros de historia o biografías.",
+        "Libros de misterio o suspenso."
+      ]
+    }
+  ],
+  "resultados": [
+    "Eres un \"JavaScript\" creativo y versátil, capaz de construir aplicaciones web interactivas y dar vida a tus ideas en línea.",
+    "Eres un \"Python\" analítico y orientado a datos, con habilidades para el análisis de datos y la resolución de problemas complejos.",
+    "Eres un \"C\" o \"C++\" detallista y orientado a la eficiencia, con habilidades para programar sistemas de bajo nivel y software robusto.",
+    "Eres un \"Java\" o \"C#\" apasionado por la creación de videojuegos y aplicaciones visuales, capaz de llevar la imaginación a la pantalla."
+  ],
+  "advertencia": "Recuerda que estos resultados son solo con fines de entretenimiento y no deben tomarse como una evaluación precisa."
+}
