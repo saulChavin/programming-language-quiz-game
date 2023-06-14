@@ -1,8 +1,9 @@
 <script setup>
+import { computed } from 'vue'
 import useQuizz from '@/composables/useQuizz'
-
+import AnswerCard from '@/components/AnswerCard.vue'
 const { pregunta, respuestas, submitAnswer, answer, result } = useQuizz()
-const optionClass = "option";
+
 </script>
 
 <template>
@@ -15,11 +16,8 @@ const optionClass = "option";
         <fieldset class="fieldset">
           <legend>{{ pregunta }}</legend>
           <ul class="answers">
-            <li v-for="(respuesta, index) in  respuestas " :key="index"
-              :class="[{ selected: answer === index, }, optionClass]">
-              <input v-model="answer" name="answers" :value="index" :id="`answer-${index}`" type="radio" />
-              <label :for="`answer-${index}`" class="answer-label"> {{ respuesta }} </label>
-            </li>
+            <AnswerCard v-for="(respuesta, index) in  respuestas" :respuesta="respuesta" :index="index"
+              :answer="answer" />
           </ul>
         </fieldset>
         <button :disabled="answer == null" type="submit" class="main-button">Siguiente</button>
@@ -48,25 +46,6 @@ const optionClass = "option";
   gap: 1rem;
 }
 
-.option {
-  background: #1f1f1f;
-  border: 1px solid #47474745;
-  border-radius: 8px;
-  display: flex;
-  transition: all 3s ease-in;
-}
-
-.selected {
-  background: rgb(131, 58, 180);
-  background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(171, 29, 253, 1) 38%, rgba(252, 176, 69, 1) 100%);
-}
-
-.answer-label {
-  flex: 1;
-  padding: 1rem;
-  cursor: pointer;
-}
-
 .fieldset {
   border: none;
   padding: 0;
@@ -87,9 +66,5 @@ const optionClass = "option";
   font-size: 1rem;
   cursor: pointer;
   border-radius: 8px;
-}
-
-input[type="radio"] {
-  display: none;
 }
 </style>
