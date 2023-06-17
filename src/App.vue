@@ -1,5 +1,4 @@
 <script setup>
-import { computed } from 'vue'
 import useQuizz from '@/composables/useQuizz'
 import AnswerCard from '@/components/AnswerCard.vue'
 const { pregunta, respuestas, submitAnswer, answer, result } = useQuizz()
@@ -16,11 +15,11 @@ const { pregunta, respuestas, submitAnswer, answer, result } = useQuizz()
         <fieldset class="fieldset">
           <legend>{{ pregunta }}</legend>
           <ul class="answers">
-            <AnswerCard v-for="(respuesta, index) in  respuestas" :respuesta="respuesta" :index="index"
-              :answer="answer" />
+            <answer-card v-for="(respuesta, index) in  respuestas" :key="index" :label="respuesta" :value="index"
+              v-model="answer" />
           </ul>
         </fieldset>
-        <button :disabled="answer == null" type="submit" class="main-button">Siguiente</button>
+        <button :disabled="answer == null" type="submit" class="main-button my-1">Siguiente</button>
       </form>
     </div>
     <div id="result">

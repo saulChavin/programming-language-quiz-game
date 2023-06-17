@@ -13,6 +13,16 @@
   align-items: center;
 }
 
+.mx-1 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.my-1 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
 .flex {
   display: flex;
 }

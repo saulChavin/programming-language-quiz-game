@@ -12,7 +12,7 @@ export default function useQuizz() {
     const result = ref('');
     const { addAnswer, reset, answered } = useAnsweredStore();
     const submitAnswer = () => {
-        if (answer != null) {
+        if (answer.value != null) {
             addAnswer(answer.value);
             if (quizz.preguntas.length - 1 === questionNumber.value) {
                 gameOver();
@@ -45,9 +45,9 @@ export default function useQuizz() {
     }
 }
 
-const countOccurences = (arr) => {
-    return arr.reduce((acc, curr) => {
-        acc[curr] = (acc[curr] || 0) + 1;
-        return acc;
-    }, {});
-}
+// const countOccurences = (arr) => {
+//     return arr.reduce((acc, curr) => {
+//         acc[curr] = (acc[curr] || 0) + 1;
+//         return acc;
+//     }, {});
+// }

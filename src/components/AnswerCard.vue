@@ -1,30 +1,31 @@
 <script setup>
-import { defineProps, toRef } from 'vue';
+import { computed } from "vue";
 const optionClass = "option";
 const props = defineProps({
-    respuesta: {
+    label: {
         type: String,
         required: true
     },
-    index: {
+    value: {
         type: Number,
         required: true
     },
-    answer: {
+    modelValue: {
         type: Number,
-        required: true
     }
 })
 
-const answer = toRef(props, 'answer')
+defineEmits(["update:modelValue"])
+const selected = computed(() => props.modelValue === props.value)
+console.log(typeof props.modelValue)
+console.log(typeof props.value)
 </script>
 
 <template>
-    <li :key="index" :class="[{ selected: answer === index }, optionClass]">
-        <input v-model="answer" name="answers" :value="index" :id="`answer-${index}`" type="radio" />
-        <label :for="`answer-${index}`" class="answer-label"> {{ respuesta }} </label>
-
-        {{ selected }}
+    <li :class="[{ selected }, optionClass]">
+        <input :value="value" :checked="value === modelValue" @change="$emit('update:modelValue', Number($event.target.value))"
+            :id="`answer-${value}`" name="answers" type="radio" />
+        <label :for="`answer-${value}`" class="answer-label"> {{ label }} </label>
     </li>
 </template>
 
