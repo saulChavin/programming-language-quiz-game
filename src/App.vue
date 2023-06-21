@@ -1,6 +1,8 @@
 <script setup>
 import useQuizz from '@/composables/useQuizz'
 import AnswerCard from '@/components/AnswerCard.vue'
+import CustomModal from './components/CustomModal.vue';
+import ResultInfo from './components/ResultInfo.vue';
 const { pregunta, respuestas, submitAnswer, answer, result } = useQuizz()
 
 </script>
@@ -22,6 +24,11 @@ const { pregunta, respuestas, submitAnswer, answer, result } = useQuizz()
         <button :disabled="answer == null" type="submit" class="main-button my-1">Siguiente</button>
       </form>
     </div>
+    <custom-modal>
+      <template #modal-content>
+        <result-info />
+      </template>
+    </custom-modal>
     <div id="result">
       <p>{{ result }}</p>
     </div>
@@ -60,10 +67,21 @@ const { pregunta, respuestas, submitAnswer, answer, result } = useQuizz()
   background-color: #4CAF50;
   border: none;
   color: white;
-  padding: 1rem 2rem;
+  padding: .85rem .85rem;
   text-align: center;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 8px;
+  margin-top: 24px;
+  width: 100%;
+}
+
+.main-button:hover {
+  background-color: #3e8e41;
+}
+
+.main-button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
 }
 </style>

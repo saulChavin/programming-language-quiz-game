@@ -23,8 +23,9 @@ console.log(typeof props.value)
 
 <template>
     <li :class="[{ selected }, optionClass]">
-        <input :value="value" :checked="value === modelValue" @change="$emit('update:modelValue', Number($event.target.value))"
-            :id="`answer-${value}`" name="answers" type="radio" />
+        <input :value="value" :checked="value === modelValue"
+            @change="$emit('update:modelValue', Number($event.target.value))" :id="`answer-${value}`" name="answers"
+            type="radio" />
         <label :for="`answer-${value}`" class="answer-label"> {{ label }} </label>
     </li>
 </template>
@@ -46,7 +47,8 @@ console.log(typeof props.value)
     height: 100%;
     position: absolute;
     transition: opacity 0.5s ease-in-out;
-    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(171, 29, 253, 1) 38%, rgba(252, 176, 69, 1) 100%);
+    background: rgb(77, 37, 103);
+    background: linear-gradient(90deg, rgba(77, 37, 103, 1) 0%, rgba(149, 27, 166, 1) 44%, rgba(179, 2, 149, 1) 85%);
 }
 
 .option.selected::after {
