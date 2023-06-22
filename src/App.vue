@@ -1,9 +1,16 @@
 <script setup>
+import { ref, Teleport } from 'vue'
 import useQuizz from '@/composables/useQuizz'
 import AnswerCard from '@/components/AnswerCard.vue'
 import CustomModal from './components/CustomModal.vue';
 import ResultInfo from './components/ResultInfo.vue';
 const { pregunta, respuestas, submitAnswer, answer, result } = useQuizz()
+
+if (open) {
+  //dosomething
+} else {
+  //dosomething
+}
 
 </script>
 
@@ -24,11 +31,13 @@ const { pregunta, respuestas, submitAnswer, answer, result } = useQuizz()
         <button :disabled="answer == null" type="submit" class="main-button my-1">Siguiente</button>
       </form>
     </div>
-    <custom-modal>
-      <template #modal-content>
-        <result-info />
-      </template>
-    </custom-modal>
+    <Teleport to="body">
+      <custom-modal :show="Boolean(result.length)" @close="result = ''">
+        <template #modal-body>
+          <result-info :result-text="result" />
+        </template>
+      </custom-modal>
+    </Teleport>
     <div id="result">
       <p>{{ result }}</p>
     </div>
